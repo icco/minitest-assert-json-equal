@@ -1,23 +1,20 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'minitest/assert/json/equal/version'
+require 'minitest-assert-json-equal/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "minitest-assert-json-equal"
-  spec.version       = Minitest::Assert::Json::Equal::VERSION
+  spec.version       = MinitestAssertJsonEqual::VERSION
   spec.authors       = ["Nat Welch"]
   spec.email         = ["nat@natwelch.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A gem to compare json strings to see if they are similar.}
+  spec.homepage      = "https://github.com/icco/minitest-assert-json-equal"
   spec.license       = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
@@ -29,5 +26,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.12"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "minitest", "~> 5.0"
+
+  spec.add_dependency "minitest", "~> 5.0"
 end
