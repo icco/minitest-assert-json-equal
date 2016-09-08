@@ -1,5 +1,7 @@
 # minitest-assert-json-equal
 
+[![Build Status](https://travis-ci.org/icco/minitest-assert-json-equal.svg?branch=master)](https://travis-ci.org/icco/minitest-assert-json-equal)
+
 This adds two methods to your minitest: `assert_json_equal` and `refute_json_equal`. They don't care about the json string. They just make sure two things are true:
 
  - the json parses.
