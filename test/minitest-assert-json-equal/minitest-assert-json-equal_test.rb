@@ -6,40 +6,40 @@ class MinitestAssertJsonEqualTest < Minitest::Test
   end
 
   def test_json_equal
-    a = {a: 1}
+    a = { a: 1 }
 
     assert_json_equal a.to_json, a.to_json
-  end 
+  end
 
   def test_json_not_equal
-    a = {a: 1}
-    b = {b: 1}
+    a = { a: 1 }
+    b = { b: 1 }
 
     refute_json_equal a.to_json, b.to_json
-  end 
+  end
 
   def test_order_doesnt_matter
-    a = {a: 1, b: 2}.to_json
-    b = "{\"b\":2,\"a\":1}"
+    a = { a: 1, b: 2 }.to_json
+    b = '{"b":2,"a":1}'
 
     assert_json_equal a, b
   end
 
   def test_invalid_json_assert
-    a = {a: 1, b: 2}.to_json
-    b = "{\"b\":2"
+    a = { a: 1, b: 2 }.to_json
+    b = '{"b":2'
 
     assert_json_equal a, b
   rescue MiniTest::Assertion => e
-    assert_equal e.message, "JSON does not parse."
+    assert_equal e.message, 'JSON does not parse.'
   end
 
   def test_invalid_json_refute
-    a = {a: 1, b: 2}.to_json
-    b = "{\"b\":2"
+    a = { a: 1, b: 2 }.to_json
+    b = '{"b":2'
 
     refute_json_equal a, b
   rescue MiniTest::Assertion => e
-    assert_equal e.message, "JSON does not parse."
+    assert_equal e.message, 'JSON does not parse.'
   end
 end
