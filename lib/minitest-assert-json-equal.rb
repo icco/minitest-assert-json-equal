@@ -11,7 +11,7 @@ module Minitest::Assertions
     b = JSON.parse(json_b)
 
     msg = message(msg, "") {
-      "Expected #{mu_pp(a)} to match #{mu_pp(b)}."
+      "Expected json to match."
     }
 
     assert_equal a, b, msg
@@ -27,7 +27,7 @@ module Minitest::Assertions
     b = JSON.parse(json_b)
 
     msg = message(msg, "") {
-      "Expected #{mu_pp(a)} not to match #{mu_pp(b)}."
+      "Expected json to match."
     }
 
     refute_equal a, b, msg
